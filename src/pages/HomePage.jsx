@@ -19,10 +19,15 @@ export default function HomePage() {
 
 
         <div className="home-page text-center">
-            <h1>Home Page</h1>
-            <p>Welcome to the Home Page</p>
 
-            <h2 className='text-center mb-3'>Movies</h2>
+            <div className="jumbotron py-2 mb-2" style={{ backgroundColor: "blue", minHeight: "250px" }}>
+                <div className="container">
+                    <h1 className="display-4">Welcome to Movie App</h1>
+                    <p>Explore our collection of movies</p>
+                </div>
+            </div>
+
+            <h2 className='text-center mb-3 py-2'>Movies</h2>
 
             <section className="movies">
                 <div className="container">

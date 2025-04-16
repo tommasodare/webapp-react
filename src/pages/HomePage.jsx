@@ -18,22 +18,22 @@ export default function HomePage() {
     return (
 
 
-        <div className="home-page">
+        <div className="home-page text-center">
             <h1>Home Page</h1>
             <p>Welcome to the Home Page</p>
 
-            <h2>Movies</h2>
+            <h2 className='text-center mb-3'>Movies</h2>
 
             <section className="movies">
                 <div className="container">
                     <div className=" row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                         {movies.map(movie => (
                             <div key={movie.id}>
-                                <div className="card">
-                                    <img src={`http://localhost:3000/img/${movie?.image}`} alt="" className='c<rd-img-top' />
+                                <div className="card" style={{ width: '25rem' }}>
+                                    <img src={`http://localhost:3000/img/${movie?.image}`} alt="" className='card-img-top' style={{ height: "600px" }} />
                                     <div className="card-body">
                                         <h3>{movie.title}</h3>
-                                        <p>{movie.genre}</p>
+                                        <p>{movie.abstract}</p>
                                     </div>
                                 </div>
                             </div>
@@ -41,11 +41,6 @@ export default function HomePage() {
                     </div>
                 </div>
             </section>
-
-
-
-
-
 
         </div>
 

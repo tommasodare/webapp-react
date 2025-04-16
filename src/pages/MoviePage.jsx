@@ -30,27 +30,36 @@ export default function MoviePage() {
 
         <>
 
-            <div className="p-5 mb-4 bg-light rounded-3">
+            <div className="px-5 mb-4 bg-light rounded-3">
                 <div className="container-fluid py-5">
                     <img src={`http://localhost:3000/img/${movie?.image}`} alt="" style={{ height: "400px" }} />
                     <h2>{movie.title}</h2>
                     <p className="col-md-8 fs-5">{movie.abstract}</p>
                     <p>{movie.vote}</p>
                     <p>{movie.text}</p>
+                    <p>{movie.genre}</p>
+                    <p>{movie.release_year}</p>
                 </div>
             </div>
 
-            {
-                reviews.map(review => (
-                    <div className="card mb-3" key={review.id}>
-                        <div className="card-body">
-                            <h5 className="card-title">{review.title}</h5>
-                            <p className="card-text">{review.text}</p>
-                            <p className="card-text"><small className="text-muted">{review.created_at}</small></p>
+
+            <div className="container text-center">
+                <h2>Reviews</h2>
+
+                {
+                    reviews.map(review => (
+                        <div className="card mb-3" key={review.id}>
+                            <div className="card-body">
+                                <h5 className="card-title">{review.name}</h5>
+                                <p className="card-text">{review.text}</p>
+                                <p className='card-text'>{review.vote}</p>
+                                <p className="card-text"><small className="text-muted">{review.created_at}</small></p>
+                            </div>
                         </div>
-                    </div>
-                ))
-            }
+                    ))
+                }
+
+            </div>
 
         </>
 

@@ -24,6 +24,24 @@ export default function MoviePage() {
             .catch(error => console.error('Error fetching movies:', error));
     }, [])
 
+    function printRating(vote) {
+
+        const stars = []
+        const empty = []
+
+        for (let index = 0; index < vote; index++) {
+            stars.push(<i className="bi bi-star-fill" key={`full-${index}`}></i>)
+
+        }
+
+        for (let index = 0; index < 5 - vote; index++) {
+            empty.push(<i className="bi bi-star" key={`empty-${index}`}></i>)
+
+        }
+
+        return [...stars, ...empty]
+    }
+
 
     return (
 
@@ -43,8 +61,8 @@ export default function MoviePage() {
             </div>
 
 
-            <div className="container text-center">
-                <h2>Reviews</h2>
+            <div className="container text-center mb-5">
+                <h2 className='mb-3'>Reviews</h2>
 
                 {
                     reviews.map(review => (
@@ -52,8 +70,7 @@ export default function MoviePage() {
                             <div className="card-body">
                                 <h5 className="card-title">{review.name}</h5>
                                 <p className="card-text">{review.text}</p>
-                                <p className='card-text'>{review.vote}</p>
-                                <p className="card-text"><small className="text-muted">{review.created_at}</small></p>
+                                <p className='card-text'>{printRating(review.vote)}</p>
                             </div>
                         </div>
                     ))

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import Form from '../components/Form';
 
 export default function MoviePage() {
 
@@ -58,6 +59,7 @@ export default function MoviePage() {
                 </div>
             </div>
 
+            <Form></Form>
 
             <div className="container text-center mb-5">
                 <h2 className='mb-3'>Reviews</h2>

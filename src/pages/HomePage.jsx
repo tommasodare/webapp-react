@@ -21,7 +21,7 @@ export default function HomePage() {
 
         <div className="home-page text-center">
 
-            <div className="jumbotron py-2 mb-2" style={{ backgroundColor: "blue", minHeight: "250px" }}>
+            <div className="jumbotron py-2 mb-2" style={{ minHeight: "250px" }}>
                 <div className="container">
                     <h1 className="display-4">Welcome to Movie App</h1>
                     <p>Explore our collection of movies</p>

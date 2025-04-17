@@ -53,8 +53,6 @@ export default function MoviePage() {
                     <img src={`http://localhost:3000/img/${movie?.image}`} alt="" style={{ height: "400px" }} />
                     <h2>{movie.title}</h2>
                     <p className="col-md-8 fs-5">{movie.abstract}</p>
-                    <p>{movie.vote}</p>
-                    <p>{movie.text}</p>
                     <p>{movie.genre}</p>
                     <p>{movie.release_year}</p>
                 </div>

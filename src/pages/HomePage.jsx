@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
 
@@ -39,6 +40,9 @@ export default function HomePage() {
                                     <div className="card-body">
                                         <h3>{movie.title}</h3>
                                         <p>{movie.abstract}</p>
+                                        <Link to={`/${movie.id}`}>
+                                            <button className="btn btn-primary">Go to movie</button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>

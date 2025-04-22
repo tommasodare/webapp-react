@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Form from '../components/Form';
+import GlobalContext from '../contexts/GlobalContext';
+import { useContext } from 'react';
 
 export default function MoviePage() {
 
@@ -9,6 +11,8 @@ export default function MoviePage() {
     const [movie, setMovie] = useState([]);
 
     const [reviews, setReviews] = useState([]);
+
+    const { setIsLoading } = useContext(GlobalContext)
 
 
     useEffect(() => {
@@ -22,7 +26,10 @@ export default function MoviePage() {
 
             }
             )
-            .catch(error => console.error('Error fetching movies:', error));
+            .catch(error => console.error('Error fetching movies:', error))
+            .finally(() => {
+                setIsLoading(false)
+            });
     }, [])
 
     function printRating(vote) {

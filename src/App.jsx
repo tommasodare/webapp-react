@@ -7,7 +7,7 @@ import GlobalContext from "./contexts/GlobalContext.jsx"
 
 export default function App() {
 
-  const [isLoading, setIsLoading] = useState(false) // se è true sta caricando la pagina
+  const [isLoading, setIsLoading] = useState(true) // se è true sta caricando la pagina
 
   return (
 

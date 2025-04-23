@@ -41,43 +41,48 @@ export default function Form() {
 
     return (
 
-        <div className="container" style={{ width: "50%", border: "1px solid blue", padding: "20px", marginBottom: "50px", borderRadius: "20px" }}>
+        <>
+            <h2 className="d-flex justify-content-center mb-4">Write here your review</h2>
 
-            <form className="row g-3 needs-validation" onSubmit={handleSubmit}>
+            <div className="container" style={{ width: "50%", border: "1px solid blue", padding: "20px", marginBottom: "50px", borderRadius: "20px" }}>
 
-                <div className="mb-3">
-                    <label htmlFor="formGroupExampleInput" className="form-label">Name</label>
-                    <input
-                        type="text"
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="form-control" id="formGroupExampleInput" placeholder="Insert here your name"
-                    />
-                </div>
+                <form className="row g-3 needs-validation" onSubmit={handleSubmit}>
 
-                <div className="mb-3">
-                    <label htmlFor="exampleFormControlTextarea1" className="form-label">Review</label>
-                    <input type="text"
-                        value={formData.text}
-                        onChange={(e) => setFormData({ ...formData, text: e.target.value })}
-                        className="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Insert here your review" />
-                </div>
+                    <div className="mb-3">
+                        <label htmlFor="formGroupExampleInput" className="form-label">Name</label>
+                        <input
+                            type="text"
+                            value={formData.name}
+                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                            className="form-control" id="formGroupExampleInput" placeholder="Insert here your name"
+                        />
+                    </div>
 
-                <div className="mb-3">
-                    <label htmlFor="formGroupExampleInput" className="form-label">Vote</label>
-                    <input
-                        type="number"
-                        value={formData.vote}
-                        onChange={(e) => setFormData({ ...formData, vote: e.target.value })}
-                        name="rating" min="1" max="5" className="mx-2" required />
-                </div>
+                    <div className="mb-3">
+                        <label htmlFor="exampleFormControlTextarea1" className="form-label">Review</label>
+                        <input type="text"
+                            value={formData.text}
+                            onChange={(e) => setFormData({ ...formData, text: e.target.value })}
+                            className="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Insert here your review" />
+                    </div>
 
-                <div className="col-12">
-                    <button className="btn btn-primary" type="submit">Submit</button>
-                </div>
+                    <div className="mb-3">
+                        <label htmlFor="formGroupExampleInput" className="form-label">Vote</label>
+                        <input
+                            type="number"
+                            value={formData.vote}
+                            onChange={(e) => setFormData({ ...formData, vote: e.target.value })}
+                            name="rating" min="1" max="5" className="mx-2" required />
+                    </div>
 
-            </form>
-        </div>
+                    <div className="col-12">
+                        <button className="btn btn-primary" type="submit">Submit</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </>
 
     )
 

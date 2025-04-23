@@ -4,6 +4,7 @@ import DefaultLayout from "./layouts/DefaultLayout.jsx"
 import HomePage from "./pages/HomePage.jsx"
 import MoviePage from "./pages/MoviePage.jsx"
 import GlobalContext from "./contexts/GlobalContext.jsx"
+import CreateMovie from "../admin/CreateMovie.jsx"
 
 export default function App() {
 
@@ -20,6 +21,8 @@ export default function App() {
             <Route Component={DefaultLayout}>
               <Route path="/" Component={HomePage} />
               <Route path="/:id" Component={MoviePage} />
+              <Route path="/create" Component={CreateMovie} />
+
             </Route>
           </Routes>
         </BrowserRouter>
